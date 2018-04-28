@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BlackSabbath.Core.MainPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="20">
+            <StackLayout>
+                <Button x:Name="Button1" Text="Login with your Google Account"></Button>                
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsAuthenticated}">
+                <Label Text="Your's Google Account Info"></Label>
+                <Grid>
+                     <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="4*" />
+                      </Grid.ColumnDefinitions>
+
+                      <Image Source="{Binding Picture}" Grid.Row="0" Grid.Column="0">
+                          
+                      </Image>
+                      <Label Text="Name" Font="Bold,16" Grid.Row="0" Grid.Column="1" />
+                      <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="2" />
+                      <Label Text="Email" Font="Bold,16" Grid.Row="1" Grid.Column="1" />
+                      <Label Text="{Binding Email}" Grid.Row="1" Grid.Column="2" />
+                      <Label Text="AccessToken" Font="Bold,14" Grid.Row="2" Grid.Column="0" />
+                      <Label Text="{Binding AccessToken}" Font="Bold,8" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" />
+                      <Label Text="RefreshToken" Font="Bold,14" Grid.Row="3" Grid.Column="0" />
+                      <Label Text="{Binding RefreshToken}" Font="Bold,8" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" />
+                </Grid>
+                <Button Text="Get"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
