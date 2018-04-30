@@ -6,13 +6,13 @@
 [iOS]: iOS.gif
 [Android]: Android.gif
 
-It's was a litte pain in the ass because I had one project but I had to add two oAUth clients, one per each platform (Android/ iOS) because it's the way that Google works.
+It's was a litte pain in the ass because one project must have two oAUth clients, one per each platform (Android/ iOS) because it's the way that Google works. *All the oAuth providers works in the same way?*
 
-[Xamarin Auth](https://github.com/xamarin/Xamarin.Auth) is a nuget package to work with oAuth in Xamarin and it do the hard work with the oAuth flow. This libray includes the **OAuthLoginPresenter** that works in both platforms (it's not required to add custom UI in each platform) and the **OAuth2Authenticator** that allows us to handle the proccess with the events *Completed* and *Error*.
+[Xamarin Auth](https://github.com/xamarin/Xamarin.Auth) is a nuget package to work with oAuth in Xamarin and it does the hard work with the oAuth flow. This libray includes the **OAuthLoginPresenter** that works in both platforms (it's not required to add custom UI in each platform) and the **OAuth2Authenticator** that allows us to handle the proccess with the events *Completed* and *Error*.
 
 ## To Remember
 
-We have to manage the returnUrl of our OAuth2Authenticator in each platform, so in Android platform we have to use an activity interceptor that it's the place to setup the DataSchemes and DataPaths. 
+We have to manage the returnUrl of our **OAuth2Authenticator** in each platform, so in Android platform we have to use an activity interceptor that it's the place to setup the DataSchemes and DataPaths. 
 
 ```csharp
 [IntentFilter(
@@ -47,7 +47,7 @@ new Task(() =>
 
 In iOS platform works without any issues.
 
-# Summary
+# Summary/ Notes
 
 Why always the Android platform have so many hacks or issues?
 
